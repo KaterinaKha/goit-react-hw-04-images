@@ -6,7 +6,6 @@ export const ImageGallery = ({ images, onOpenModal }) => {
   return (
     <ul className={css.ImageGallery}>
       {images.map(image => (
-        // console.log(image)
         <ImageGalleryItem
           key={image.id}
           image={image}

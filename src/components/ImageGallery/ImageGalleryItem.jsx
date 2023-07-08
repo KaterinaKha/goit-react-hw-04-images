@@ -11,7 +11,7 @@ export const ImageGalleryItem = ({ image, onOpenModal }) => {
       <img
         src={image.webformatURL}
         alt={image.tags}
-        className={css.ImageGalleryItem - image}
+        className={css.ImageGalleryItemImg}
       />
     </li>
   );
