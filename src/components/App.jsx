@@ -28,8 +28,9 @@ export default function App() {
   const [error, setError] = useState(false);
   const [modal, setModal] = useState({ isOpen: false, imgURL: '' });
 
-  const handleFormSubmit = searchQuery => {
-    setSearchQuery(searchQuery);
+  const handleFormSubmit = searchValue => {
+    setSearchQuery(searchValue);
+    setPage(1);
   };
 
   const onLoadMore = () => {
@@ -61,6 +62,7 @@ export default function App() {
         if (page === 1) {
           setImages(images.hits);
           setLoadMoreBtn(isMorePages);
+          setPage(1);
         } else {
           setImages(prevState => [...prevState, ...images.hits]);
           setLoadMoreBtn(isMorePages);
@@ -84,6 +86,7 @@ export default function App() {
         setLoading(false);
       }
     };
+
     fetchImageData();
   }, [searchQuery, page]);
   //========================================================
