@@ -22,7 +22,7 @@ const toastConfig = {
 export default function App() {
   const [images, setImages] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [page, setPage] = useState();
+  const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [loadMoreBtn, setLoadMoreBtn] = useState(false);
   const [error, setError] = useState(false);
@@ -81,7 +81,6 @@ export default function App() {
         setError(error.message);
         toast.error(error.message, toastConfig);
       } finally {
-        console.log(images.hits.length);
         setLoading(false);
       }
     };
